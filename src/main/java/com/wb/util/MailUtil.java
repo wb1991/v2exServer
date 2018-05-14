@@ -347,7 +347,34 @@ public class MailUtil {
             e.printStackTrace();
             System.out.println("发送邮件失败");
             try {
-                sendTextEmail("新主题通知发送失败，请及时查看", "新主题通知发送失败，请及时查看");
+                sendTextEmail("免费赠送新主题通知发送失败，请及时查看", "新主题通知发送失败，请及时查看");
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        }
+    }
+    
+    /**
+     * 发送二手交易信息邮件
+     * @param titleList 二手交易信息
+     */
+    public static void sendV2exSecondHandEmail(List<String> titleList) {
+        if (titleList == null || titleList.size() == 0) {
+            System.out.println("=========没有发现新主题===============");
+            return;
+        }
+        StringBuffer sb = new StringBuffer("");
+        for (String str : titleList) {
+            sb = sb.append(str);
+            sb = sb.append("<br/>");
+        }
+        try {
+            sendHtmlEmail("v2ex二手交易", sb.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("发送邮件失败");
+            try {
+                sendTextEmail("二手交易新主题通知发送失败，请及时查看", "新主题通知发送失败，请及时查看");
             } catch (Exception e1) {
                 e1.printStackTrace();
             }
@@ -389,4 +416,5 @@ public class MailUtil {
         list.add("<a>123</a>");
         sendV2exEmail(list);
   }
+
 }
