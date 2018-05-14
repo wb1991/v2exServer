@@ -81,6 +81,12 @@ public class V2exFree implements Job{
     @Test
     public void test() {
         getFreeTitle();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        getSecondHandTitle();
     }
 
     public void execute(JobExecutionContext arg0) throws JobExecutionException {
