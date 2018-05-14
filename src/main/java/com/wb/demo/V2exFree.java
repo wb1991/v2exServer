@@ -78,23 +78,6 @@ public class V2exFree implements Job{
         }
     }
     
-    
-    /**
-     * 判断标题中是否包含特定的关键词
-     * @param title 标题
-     * @return
-     */
-//    private boolean isContainsKeywords(String title) {
-//        boolean isContains = false;
-//        for (String keyword : keywords) {
-//            if (title.contains(keyword)) {
-//                isContains = true;
-//                break;
-//            }
-//        }
-//        return isContains;
-//    }
-    
     @Test
     public void test() {
         getFreeTitle();
